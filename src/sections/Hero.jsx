@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import HackerRoom from "../components/HackerRoom";
 import { Suspense } from "react";
 import CanvasLoader from "../components/CanvasLoader";
+import { Leva } from "leva";
 
 const Hero = () => {
   return (
@@ -20,11 +21,13 @@ const Hero = () => {
           <Suspense fallback={<CanvasLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 30]} />
             <HackerRoom
-              scale={0.05}
+              scale={0.07}
               position={[0, 0, 0]}
-              rotation={[0, -Math.PI / 2, 0]}
+              rotation={[0, 280, 0]}
             />
+            <Leva />
             <ambientLight intensity={1} />
+            <directionalLight position={[10, 10, 10]} intensity={0.5} />
           </Suspense>
         </Canvas>
       </div>
